@@ -1,0 +1,11 @@
+1. Créer un nouveau dossier, puis naviguer dedand grâce au terminal
+2. Exécuter la commande "npm init -y". Cette commande a pour effet de nous générer un fichier "package.json". Ce fichier est nécessaire à notre projet. Il contient toutes les dépendances de notre projet ainsi que les scripts à éxécuter.
+3. Créer un dossier "src/" contenant le nouveau fichier "index.js"
+4. Dans le package.json, créer le script "dev" qui va éxécuter la commande "nodemon src/index.js"
+	Nodemon est un packet qui observe les changements des fichiers javascript. Si une modification a lieu dans l'un de ces fichier, notre fichier index.js va être de nouveau éxécuté. Pour l'installer sur votre machine, il faudra écrire: "npm install --global nodemon"
+5. éxécuter la commande "npm run dev"
+
+
+
+
+Versionning des dépendances: https://semver.npmjs.com/
