@@ -1,7 +1,8 @@
 // Importation des différents modules
 const express = require("express")
 const path = require("path")
-const users = require("./data")
+const data = require("./data")
+const { users, products } = data
 
 // Initialisation des variables
 const port = 3000
@@ -51,6 +52,21 @@ app.get("/users/:id", (req, res) => {
 	const foundUser = users.find(user => user.id == req.params.id)
 	if (!foundUser) return res.send("Utilisateur inconnu")
 	res.json(foundUser)
+})
+
+app.get("/products", (req, res) => {
+	res.json(products)
+})
+
+app.post("/products", (req, res) => {
+	res.json(req.body)
+})
+
+app.get("/products/:id", (req, res) => {
+	const { id } = req.params
+	const foundProduct = products.find(product => product.id == id)
+	if (!foundProduct) return res.send("Produit inconnu")
+	res.json(foundProduct)
 })
 
 app.get("/search", (req, res) => {
